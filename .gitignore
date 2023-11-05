@@ -1,0 +1,12 @@
+# Ignore compiled binaries
+# *.exe
+# *.o
+
+# Ignore files in the a directory
+venv/
+
+# Ignore the "config" file
+# config.ini
+
+# Ignore files
+init.sql
