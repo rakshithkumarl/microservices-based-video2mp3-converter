@@ -2,12 +2,8 @@
 # *.exe
 # *.o
 
-# Ignore files in the a directory
+# Ignore a directory
 python/src/auth/venv/
 
-# Ignore the "config" file
-# config.ini
-
-# Ignore files
-init.sql
+# Ignore specific files
 python/src/auth/init.sql
