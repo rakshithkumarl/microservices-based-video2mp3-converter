@@ -3,10 +3,11 @@
 # *.o
 
 # Ignore files in the a directory
-venv/
+python/src/auth/venv/
 
 # Ignore the "config" file
 # config.ini
 
 # Ignore files
 init.sql
+python/src/auth/init.sql
