@@ -7,3 +7,4 @@ python/src/auth/venv/
 
 # Ignore specific files
 python/src/auth/init.sql
+python\src\auth\manifests\secret.yaml
