@@ -15,7 +15,7 @@ def upload(f, fs, channel, access):
     try:  #Try to put the message on the queue
         channel.basic_publish(
             exchange = "",
-            routing_key = "video"       # Name of the queue within the broker 
+            routing_key = "video",       # Name of the queue within the broker 
             body = json.dumps(message),
             properties = pika.BasicProperties(
                 delivery_mode = pika.spec.PERSISTENT_DELIVERY_MODE  # To make the queue and its messages durable in the event of the failure of the pod
