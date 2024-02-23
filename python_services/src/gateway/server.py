@@ -14,7 +14,7 @@ mongo = PyMongo(server, uri="mongodb://host.minikube.internal:27017/videos")
 
 fs = gridfs.GridFS(mongo.db)
 
-connection = pika.BlockingConnection(pika.ConnectionParameters("rabbitmq"))
+connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
 channel = connection.channel()
 
 @server.route("/login", methods = ["POST"])
