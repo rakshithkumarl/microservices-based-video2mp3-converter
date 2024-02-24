@@ -4,7 +4,7 @@ import gridfs
 from flask import Flask, request
 from flask_pymongo import PyMongo
 from auth import validate
-#from auth_svc import access
+from auth_svc import access
 from storage import util
 
 server = Flask(__name__)
@@ -22,6 +22,7 @@ def login():
     token, err = access.login(request)
 
     if not err:
+        #print("Token: ", token)
         return token
     else:
         return err
@@ -29,6 +30,7 @@ def login():
 @server.route("/upload", methods = ["POST"])
 def upload():
     access, err = validate.token(request)
+    print(access)
     access = json.loads(access)
     if access["admin"]:
         if len(request.files) != 1:

@@ -40,11 +40,13 @@ def login():
 # Validate JWT
 @server.route('/validate', methods=["POST"])
 def validate():
+    print("Inside validate of auth service")
     encoded_jwt = request.headers["Authorization"]
+    print(encoded_jwt)
     if not encoded_jwt:
         return "Missing credentials", 401
     
-    auth_type, encoded_jwt = encoded_jwt.split(" ") # "Bearer" or "Basic" and "token"
+    # auth_type, encoded_jwt = encoded_jwt.split(" ") # "Bearer" or "Basic" and "token"
     try:
         decoded_jwt = jwt.decode(
             encoded_jwt, os.environ.get("JWT_SECRET"), algorithm=["HS256"]
